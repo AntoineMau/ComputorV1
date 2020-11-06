@@ -4,6 +4,8 @@
 
 * [Introduction](#introduction)
 * [Python Environment](#python-environment)
+  * [Start env](#start-env)
+  * [End env](#end-env)
 * [Usage](#usage)
 * [Exemple](#exemple)
   * [Normal](#normal)
@@ -20,10 +22,11 @@ mathematics. It is used in every field on every level to simplify and express ma
 For instance, they help calculate functions such as sin, cos, et tan.  
   
 ## Python Environment
-Start env:  
-<code>source env/bin/activate</code>
-Exit env:  
-<code>deactivate</code>
+### Start env  
+<pre><code>$ source env/bin/activate</code></pre>
+  
+### End env  
+<pre><code>$ deactivate</code></pre>
   
 ## Usage
 <pre><code>Usage: ./computor.py [options] polynom
@@ -35,7 +38,7 @@ Options:
   
 ## Exemple
 ### Normal
-<pre><code>./computor.py "5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
+<pre><code>$ ./computor.py "5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
 Reduced form: 4 + 4 * X - 9.3 * X^2 = 0
 Polynomial degree: 2
 Discriminant is strictly positive, the two solutions are:
@@ -43,7 +46,7 @@ Discriminant is strictly positive, the two solutions are:
 -0.475131</pre></code>
 
 ### Verbose On
-<pre><code>./computor.py -v "5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
+<pre><code>$ ./computor.py -v "5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
 Reduced form: 4 + 4 * X - 9.3 * X^2 = 0
 form: a*x^2 + b*x + c = 0
 a: -9.3
@@ -61,7 +64,7 @@ Discriminant is strictly positive, the two solutions are:
 -0.475131</pre></code>
 
 ### Graph On
-<pre><code>./computor.py -g "5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
+<pre><code>$ ./computor.py -g "5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
 Reduced form: 4 + 4 * X - 9.3 * X^2 = 0
 Polynomial degree: 2
 Discriminant is strictly positive, the two solutions are:
