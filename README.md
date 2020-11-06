@@ -20,8 +20,10 @@ mathematics. It is used in every field on every level to simplify and express ma
 For instance, they help calculate functions such as sin, cos, et tan.  
   
 ## Python Environment
-<pre><code>enter env: source env/bin/activate
-exit env: deactivate</code></pre>
+Start env:  
+<code>source env/bin/activate</code>
+Exit env:  
+<code>deactivate</code>
   
 ## Usage
 <pre><code>Usage: ./computor.py [options] polynom
