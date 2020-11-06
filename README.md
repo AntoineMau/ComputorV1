@@ -55,4 +55,4 @@ Polynomial degree: 2
 Discriminant is strictly positive, the two solutions are:
 0.905239
 -0.475131</pre></code>
-<img src="./images/Graph_exemple.png">
+<img src="./.images/Graph_exemple.png">
