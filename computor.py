@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!./.venv/bin/python3
 
 from parse import parse
 from utils import errno, exe_graph, parse_option
