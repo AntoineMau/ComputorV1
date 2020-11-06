@@ -56,3 +56,10 @@ Discriminant is strictly positive, the two solutions are:
 0.905239
 -0.475131</pre></code>
 <img src="./.images/Graph_exemple.png">
+
+## More info
+### Autor
+[Antoine Mauffret](https://github.com/AntoineMau)  
+  
+### Suject
+[Computor v1](https://cdn.intra.42.fr/pdf/pdf/9774/en.subject.pdf)
