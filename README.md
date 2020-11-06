@@ -4,8 +4,6 @@
 
 * [Introduction](#introduction)
 * [Python Environment](#python-environment)
-  * [Start env](#start-env)
-  * [End env](#end-env)
 * [Usage](#usage)
 * [Exemple](#exemple)
   * [Normal](#normal)
@@ -22,11 +20,9 @@ mathematics. It is used in every field on every level to simplify and express ma
 For instance, they help calculate functions such as sin, cos, et tan.  
   
 ## Python Environment
-### Start env  
-<pre><code>$ source env/bin/activate</code></pre>
+**Start env:** <code>$ source env/bin/activate</code>  
   
-### End env  
-<pre><code>$ deactivate</code></pre>
+**End env:** <code>$ deactivate</code>  
   
 ## Usage
 <pre><code>Usage: ./computor.py [options] polynom
