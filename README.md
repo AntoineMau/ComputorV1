@@ -1,5 +1,15 @@
 # ComputorV1
 
+## Table of Contents
+
+* [Introduction](#introduction)
+* [Python Environment](#python-environment)
+* [Usage](#usage)
+* [Exemple](#exemple)
+  * [Normal](#normal)
+  * [Verbose On](#verbose-on)
+  * [Graph On](#graph-on)
+* [More info](#more-info)
 ## Introduction
 This project aims to make you code a simple equation solving program. It will take
 polynomial equations into account. These equations will only require exponents.
@@ -59,5 +69,5 @@ Discriminant is strictly positive, the two solutions are:
 
 ## More info
 **Autor:** [Antoine Mauffret](https://github.com/AntoineMau)  
-    
+  
 **Suject:** [Computor v1](https://cdn.intra.42.fr/pdf/pdf/9774/en.subject.pdf)
