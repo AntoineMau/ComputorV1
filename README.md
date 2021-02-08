@@ -24,7 +24,7 @@ For instance, they help calculate functions such as sin, cos, et tan.
 **End env:** <code>$ deactivate</code>  
   
 ## Usage
-<pre><code>usage: ./computor.py [-h] [-v] [-g] poly
+<pre><code>usage: computor.py [-h] [-v] [-g] poly
 
 positional arguments:
   poly           polynom to process

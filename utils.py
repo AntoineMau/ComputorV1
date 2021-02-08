@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from argparse import ArgumentParser
 
 def parse_option():
-	parser = ArgumentParser(usage="./%(prog)s [-h] [-v] [-g] poly")
+	parser = ArgumentParser()
 	parser.add_argument("-v", "--verbose", action="store_true", default=False, \
 		help="show detail operations performed")
 	parser.add_argument("-g", "--graph", action="store_true", default=False, \
