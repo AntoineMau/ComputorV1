@@ -1,10 +1,13 @@
-#!./.venv/bin/python3
+#!/usr/bin/python3
+# !./.venv/bin/python3
 
 from parse import parse
 from utils import errno, exe_graph, parse_option
 from process import get_solution, reduced_form
 
 def degree_0(poly):
+	if poly.verbose:
+		print("form: a = 0\na: %g\n" % poly.c)
 	return "All real numbers are solutions." if poly.c == 0 \
 		else "it can't be solved"
 
@@ -37,11 +40,9 @@ class Polynome:
 			.format(self=self)
 
 if __name__ == "__main__":
-	(options, args) = parse_option()
-	if len(args) != 1:
-		errno("nb_params", len(args))
-	tab = reduced_form(parse(args[0]), "")
-	poly = Polynome(*tab, **vars(options))
+	args = parse_option()
+	tab = reduced_form(parse(args.poly), "")
+	poly = Polynome(*tab, args.verbose, args.graph)
 	poly.solution = poly.process()
 	print(poly)
 	if poly.graph:

@@ -24,12 +24,15 @@ For instance, they help calculate functions such as sin, cos, et tan.
 **End env:** <code>$ deactivate</code>  
   
 ## Usage
-<pre><code>Usage: ./computor.py [options] polynom
+<pre><code>usage: ./computor.py [-h] [-v] [-g] poly
 
-Options:
-	-h, --help     show this help message and exit
-	-v, --verbose  show detail operations performed
-	-g, --graph    show polynomial graph</code></pre>  
+positional arguments:
+  poly           polynom to process
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -v, --verbose  show detail operations performed
+  -g, --graph    show polynomial graph</code></pre>  
   
 ## Exemple
 ### Normal

@@ -1,12 +1,14 @@
 import matplotlib.pyplot as plt
-from optparse import OptionParser
+from argparse import ArgumentParser
 
 def parse_option():
-	parser = OptionParser(usage="Usage: %prog [options] polynom")
-	parser.add_option("-v", "--verbose", action="store_true", dest="verbose", \
-		default=False, help="show detail operations performed")
-	parser.add_option("-g", "--graph", action="store_true", dest="graph", \
-		default=False, help="show polynomial graph")
+	parser = ArgumentParser(usage="./%(prog)s [-h] [-v] [-g] poly")
+	parser.add_argument("-v", "--verbose", action="store_true", default=False, \
+		help="show detail operations performed")
+	parser.add_argument("-g", "--graph", action="store_true", default=False, \
+		help="show polynomial graph")
+	parser.add_argument("poly", action="store", type=str, \
+		help="polynom to process")
 	return parser.parse_args()
 
 def exe_graph(poly):
