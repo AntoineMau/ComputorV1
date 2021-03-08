@@ -73,4 +73,4 @@ Discriminant is strictly positive, the two solutions are:
 ## More info
 **Autor:** [Antoine Mauffret](https://github.com/AntoineMau)  
   
-**Suject:** [Computor v1](https://cdn.intra.42.fr/pdf/pdf/9774/en.subject.pdf)
+**Subject:** [Computor v1](https://cdn.intra.42.fr/pdf/pdf/9774/en.subject.pdf)
