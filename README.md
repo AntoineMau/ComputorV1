@@ -1,7 +1,7 @@
 # ComputorV1
 ## Table of Contents
 * [Introduction](#introduction)
-* [Python Environment](#python-environment)
+* [Python Requirements](#python-Requirements)
 * [Usage](#usage)
 * [Exemple](#exemple)
   * [Normal](#normal)
@@ -18,10 +18,8 @@ Why polynomials? Just because it’s one of the simplest and most powerful tools
 mathematics. It is used in every field on every level to simplify and express many things.
 For instance, they help calculate functions such as sin, cos, et tan.  
   
-## Python Environment
-**Start env:** <code>$ source .venv/bin/activate</code>  
-  
-**End env:** <code>$ deactivate</code>  
+## Python Requirements
+**install requirements:** <code>$ python3 -m pip install -r requirements.txt</code>  
   
 ## Usage
 <pre><code>usage: computor.py [-h] [-v] [-g] poly
@@ -68,6 +66,7 @@ Polynomial degree: 2
 Discriminant is strictly positive, the two solutions are:
 0.905239
 -0.475131</pre></code>
+**Open image:** <code>$ xdg-open mygraph.png</code>  
 <img src="./.images/Graph_exemple.png">
   
 ## More info
