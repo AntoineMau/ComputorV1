@@ -35,7 +35,7 @@ optional arguments:
 ## Exemple
 ### Normal
 <pre><code>$ ./computor.py "5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
-Reduced form: 4 + 4 * X - 9.3 * X^2 = 0
+Reduced form: -9.3 * X^2 + 4 * X + 4 = 0
 Polynomial degree: 2
 Discriminant is strictly positive, the two solutions are:
 0.905239
@@ -43,7 +43,7 @@ Discriminant is strictly positive, the two solutions are:
   
 ### Verbose On
 <pre><code>$ ./computor.py -v "5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
-Reduced form: 4 + 4 * X - 9.3 * X^2 = 0
+Reduced form: -9.3 * X^2 + 4 * X + 4 = 0
 form: a*x^2 + b*x + c = 0
 a: -9.3
 b: 4
@@ -61,7 +61,7 @@ Discriminant is strictly positive, the two solutions are:
   
 ### Graph On
 <pre><code>$ ./computor.py -g "5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
-Reduced form: 4 + 4 * X - 9.3 * X^2 = 0
+Reduced form: -9.3 * X^2 + 4 * X + 4 = 0
 Polynomial degree: 2
 Discriminant is strictly positive, the two solutions are:
 0.905239
