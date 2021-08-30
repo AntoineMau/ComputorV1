@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 class Polynome:
-	def __init__(self, c, b, a, verbose, graph):
+	def __init__(self, a, b, c, verbose, graph):
 		self.a, self.b, self.c = a, b, c
 		self.degree = 2 if a != 0 else 1 if b != 0 else 0
 		self.verbose, self.graph = verbose, graph

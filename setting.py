@@ -6,7 +6,7 @@ class Setting:
 		self.poly = str()
 		self.graph = int()
 		self.verbose = int()
-		self.tab = {"0": 0, "1": 0, "2": 0}
+		self.tab = {"2": 0, "1": 0, "0": 0}
 		self.parser()
 
 	def parser(self):
@@ -61,7 +61,7 @@ class Setting:
 			if nb == 0:
 				pass
 			elif exp == "0":
-				Reduced_form += "%g " % nb
+				Reduced_form += "%+g " % nb
 			elif exp == "1":
 				Reduced_form += ("%+g * X " % nb).replace("1 * ", "")
 			else:
@@ -71,6 +71,7 @@ class Setting:
 		Reduced_form += "= 0"
 		if Reduced_form.startswith("+"):
 			Reduced_form = Reduced_form[1:]
+		print(" ".join(["Reduced form:", Reduced_form.replace(" -", " - ").replace(" +", " + ")]))
 		for exp in self.tab.keys():
 			try:
 				assert(int(exp) == 0 or int(exp) == 1 or int(exp) == 2)
@@ -78,7 +79,7 @@ class Setting:
 				self.errno("degree", exp)
 		self.tab = self.tab.values()
 	
-	def errno(nb_error, detail = None):
+	def errno(self, nb_error, detail = None):
 		msg_error = {
 			"degree": "Polynomial degree: %s\nThe polynomial degree is stricly greater than 2, I can't solve." % detail,
 			"bad poly": "Error: bad format of polynom. Ex: c * X^0 + b * X^1 - a * X^2 = d * X^0",
