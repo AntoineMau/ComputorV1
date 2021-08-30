@@ -7,10 +7,6 @@ class Polynome:
 		self.verbose, self.graph = verbose, graph
 		self.solution = self.process()
 
-	def process(self):
-		tab_degree = [self.degree_0, self.degree_1, self.degree_2]
-		return tab_degree[self.degree]()
-
 	def degree_0(self):
 		if self.verbose:
 			print("form: a = 0\na: %g\n" % self.c)
@@ -22,12 +18,16 @@ class Polynome:
 		x = -self.c / self.b
 		if x == 0:
 			x = 0
-		return("The solution is:\n%g" % x)
+		return "The solution is:\n%g" % x
 
 	def degree_2(self):
 		if self.verbose:
 			print("form: a*x^2 + b*x + c = 0\na: %g\nb: %g\nc: %g\n" % (self.a, self.b, self.c))
 		return self.get_solution()
+
+	def process(self):
+		tab_degree = [self.degree_0, self.degree_1, self.degree_2]
+		return tab_degree[self.degree]()
 
 	def discriminant_positive(self, sqrt_disc):
 		if self.verbose:
@@ -38,8 +38,7 @@ class Polynome:
 			x1 = 0
 		if x2 == 0:
 			x2 = 0
-		return ("Discriminant is strictly positive, the two solutions are:\n%g\n%g"
-			% (x1, x2))
+		return "Discriminant is strictly positive, the two solutions are:\nx1: %g\nx2: %g" % (x1, x2)
 
 	def discriminant_zero(self):
 		if self.verbose:
@@ -48,6 +47,17 @@ class Polynome:
 		if x == 0:
 			x = 0
 		return "Discriminant is null, the solution is %g" % x
+
+	def discriminant_negative(self, discriminant):
+		if self.verbose:
+			print("x1: (-b - i√Δ) / (2*a)\nx2: (-b + i√Δ) / (2*a)\n")
+		x1 = "(%g - i√%g) / %g" % (-self.b, discriminant, 2*self.a)
+		x2 = "(%g + i√%g) / %g" % (-self.b, discriminant, 2*self.a)
+		if x1 == 0:
+			x1 = 0
+		if x2 == 0:
+			x2 = 0
+		return "Discriminant is strictly negative, the two solutions are:\nx1: %s\nx2: %s" % (x1, x2)
 
 	def get_solution(self):
 		discriminant = self.b**2 - 4*self.a*self.c
@@ -58,8 +68,8 @@ class Polynome:
 		elif discriminant == 0:
 			solution = self.discriminant_zero()
 		else:
-			solution = "Discriminant is strictly negative, no real solution exist."
-		return(solution)
+			solution = self.discriminant_negative(-discriminant)
+		return solution
 
 	def exe_graph(self):
 		ranges = range(-20, 21)

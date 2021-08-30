@@ -6,13 +6,13 @@ class Setting:
 		self.poly = str()
 		self.graph = int()
 		self.verbose = int()
-		self.tab = {"2": 0, "1": 0, "0": 0}
+		self.tab = {"2": float(), "1": float(), "0": float()}
 		self.parser()
 
 	def parser(self):
 		self.parse_option()
 		self.parse_poly()
-		self.reduced_form("")
+		self.reduced_form()
 
 	def parse_option(self):
 		parser = ArgumentParser()
@@ -41,7 +41,7 @@ class Setting:
 				tab[exp] += float(nb) if add is True else -float(nb)
 			except KeyError:
 				tab[exp] = float(nb) if add is True else -float(nb)
-		return(tab)
+		return tab
 
 	def check_param(self, poly):
 		try:
@@ -56,22 +56,22 @@ class Setting:
 			self.errno("bad poly")
 		return(left, right)
 
-	def reduced_form(self, Reduced_form):
+	def reduced_form(self):
+		reduced_form = str()
 		for exp, nb in self.tab.items():
 			if nb == 0:
-				pass
-			elif exp == "0":
-				Reduced_form += "%+g " % nb
-			elif exp == "1":
-				Reduced_form += ("%+g * X " % nb).replace("1 * ", "")
-			else:
-				Reduced_form += ("%+g * X^%g " % (nb, int(exp))).replace("1 * ", "")
-		if Reduced_form == "":
-			Reduced_form = "0 "
-		Reduced_form += "= 0"
-		if Reduced_form.startswith("+"):
-			Reduced_form = Reduced_form[1:]
-		print(" ".join(["Reduced form:", Reduced_form.replace(" -", " - ").replace(" +", " + ")]))
+				continue
+			if nb == 1:
+				reduced_form += "+X " if exp == 1 else "+X^%d " % int(exp) if exp != 0 else ""
+			else :
+				reduced_form += "%+g " % nb
+				reduced_form += "* X " if exp == 1 else "* X^%d " % int(exp) if exp != 0 else ""
+		if reduced_form == "":
+			reduced_form = "0 "
+		reduced_form += "= 0"
+		if reduced_form.startswith("+"):
+			reduced_form = reduced_form[1:]
+		print(" ".join(["Reduced form:", reduced_form.replace(" -", " - ").replace(" +", " + ")]))
 		for exp in self.tab.keys():
 			try:
 				assert(int(exp) == 0 or int(exp) == 1 or int(exp) == 2)
@@ -82,7 +82,7 @@ class Setting:
 	def errno(self, nb_error, detail = None):
 		msg_error = {
 			"degree": "Polynomial degree: %s\nThe polynomial degree is stricly greater than 2, I can't solve." % detail,
-			"bad poly": "Error: bad format of polynom. Ex: c * X^0 + b * X^1 - a * X^2 = d * X^0",
+			"bad poly": "Error: bad format of polynom. Ex: a * X^2 + b * X^1 - c * X^0 = d * X^0",
 		}
 		print(msg_error[nb_error])
 		exit(1)
