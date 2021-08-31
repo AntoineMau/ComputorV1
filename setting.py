@@ -4,8 +4,7 @@ from re import match, findall, sub
 class Setting:
 	def __init__(self):
 		self.poly = str()
-		self.graph = int()
-		self.verbose = int()
+		self.graph, self.verbose = int(), int()
 		self.tab = {"2": float(), "1": float(), "0": float()}
 		self.parser()
 
