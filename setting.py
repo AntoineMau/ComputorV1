@@ -17,7 +17,7 @@ class Setting:
 		parser = ArgumentParser()
 		parser.add_argument("-v", "--verbose", action="store_true", default=False, help="show detail operations performed")
 		parser.add_argument("-g", "--graph", action="store_true", default=False, help="show polynomial graph")
-		parser.add_argument("poly", action="store", type=str, help="polynom to process")
+		parser.add_argument("poly", action="store", type=str, help="equation to process")
 		args = parser.parse_args()
 		self.poly = args.poly
 		self.graph = args.graph
@@ -36,10 +36,13 @@ class Setting:
 	def poly_to_dict(self, numbers, tab, add):
 		for x in numbers:
 			nb, exp = x.split("*X^")
+			nb = float(nb)
+			if nb == 0:
+				continue
 			try:
-				tab[exp] += float(nb) if add is True else -float(nb)
+				tab[exp] += nb if add is True else -nb
 			except KeyError:
-				tab[exp] = float(nb) if add is True else -float(nb)
+				tab[exp] = nb if add is True else -nb
 		return tab
 
 	def check_param(self, poly):
@@ -61,10 +64,10 @@ class Setting:
 			if nb == 0:
 				continue
 			if nb == 1:
-				reduced_form += "+X " if exp == 1 else "+X^%d " % int(exp) if exp != 0 else ""
+				reduced_form += "+X " if exp == "1" else "+X^%d " % int(exp) if exp != "0" else "%+g " % nb
 			else :
 				reduced_form += "%+g " % nb
-				reduced_form += "* X " if exp == 1 else "* X^%d " % int(exp) if exp != 0 else ""
+				reduced_form += "* X " if exp == "1" else "* X^%d " % int(exp) if exp != "0" else ""
 		if reduced_form == "":
 			reduced_form = "0 "
 		reduced_form += "= 0"

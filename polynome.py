@@ -83,8 +83,8 @@ class Polynome:
 	def discriminant_negative(self, discriminant):
 		verboseX1, verboseX2 = str(), str()
 		if self.verbose:
-			verboseX1 += "x1: (-b - i√Δ) / (2*a)\n"
-			verboseX2 += "\nx2: (-b + i√Δ) / (2*a)\n"
+			verboseX1 += "x1: (-b - i√-Δ) / (2*a)\n"
+			verboseX2 += "\nx2: (-b + i√-Δ) / (2*a)\n"
 			self.b = -self.b
 			verboseX1 += "x1: (%g - i√%g) / (2*%g)\n" % (self.b, discriminant, self.a)
 			verboseX2 += "x2: (%g + i√%g) / (2*%g)\n" % (self.b, discriminant, self.a)
