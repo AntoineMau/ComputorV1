@@ -66,7 +66,7 @@ Polynomial degree: 2
 Discriminant is strictly positive, the two solutions are:
 0.905239
 -0.475131</pre></code>
-**Open image:** <code>$ xdg-open mygraph.png</code>  
+  
 <img src="./.images/Graph_exemple.png">
   
 ## More info
