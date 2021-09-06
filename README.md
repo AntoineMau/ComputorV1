@@ -19,7 +19,7 @@ mathematics. It is used in every field on every level to simplify and express ma
 For instance, they help calculate functions such as sin, cos, et tan.  
   
 ## Python Requirements
-**install requirements:** <code>$ python3 -m pip install -r requirements.txt</code>  
+**install requirements:** <code>$ pip3 install -r requirements.txt</code>  
   
 ## Usage
 <pre><code>usage: computor.py [-h] [-v] [-g] poly
@@ -34,7 +34,7 @@ optional arguments:
   
 ## Exemple
 ### Normal
-<pre><code>$ ./computor.py "5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
+<pre><code>$ python3 computor.py "5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
 Reduced form: -9.3 * X^2 + 4 * X + 4 = 0
 Polynomial degree: 2
 Discriminant is strictly positive, the two solutions are:
@@ -42,7 +42,7 @@ Discriminant is strictly positive, the two solutions are:
 -0.475131</pre></code>
   
 ### Verbose On
-<pre><code>$ ./computor.py -v "5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
+<pre><code>$ python3 computor.py -v "5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
 Reduced form: -9.3 * X^2 + 4 * X + 4 = 0
 form: a*x^2 + b*x + c = 0
 a: -9.3
@@ -60,7 +60,7 @@ Discriminant is strictly positive, the two solutions are:
 -0.475131</pre></code>
   
 ### Graph On
-<pre><code>$ ./computor.py -g "5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
+<pre><code>$ python3 computor.py -g "5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
 Reduced form: -9.3 * X^2 + 4 * X + 4 = 0
 Polynomial degree: 2
 Discriminant is strictly positive, the two solutions are:
