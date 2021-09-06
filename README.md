@@ -1,4 +1,4 @@
-# ComputorV1 [(subject)](https://cdn.intra.42.fr/pdf/pdf/9774/en.subject.pdf)
+# ComputorV1
 ## Table of Contents
 * [Introduction](#introduction)
 * [Python Requirements](#python-Requirements)
