@@ -4,9 +4,9 @@ from re import match, findall, sub
 class Setting:
 	def __init__(self):
 		self.poly = str()
-		self.graph, self.verbose = int(), int()
+		self.graph = int()
+		self.verbose = int()
 		self.tab = {"2": float(), "1": float(), "0": float()}
-		self.parser()
 
 	def parser(self):
 		self.parse_option()
@@ -22,16 +22,6 @@ class Setting:
 		self.poly = args.poly
 		self.graph = args.graph
 		self.verbose = args.verbose
-
-	def parse_poly(self):
-		poly = self.poly.replace(" ", "")
-		poly = sub(r"X(?!\^)", "X^1", poly)
-		poly = sub(r"(?<!\*)X", "1*X", poly)
-		poly = sub(r"(?<!\^\d)(?<=\d)(?![\*.\d])", "*X^0", poly)
-		left, right = self.check_param(poly)
-		regex = r"[-+]?\d*\.?\d*\*X\^?[-+]?\d*\.?\d*"
-		self.tab = self.poly_to_dict(findall(regex, left), self.tab, True)
-		self.tab = self.poly_to_dict(findall(regex, right), self.tab, False)
 
 	def poly_to_dict(self, numbers, tab, add):
 		for x in numbers:
@@ -57,6 +47,16 @@ class Setting:
 		except AssertionError:
 			self.errno("bad poly")
 		return(left, right)
+
+	def parse_poly(self):
+		poly = self.poly.replace(" ", "")
+		poly = sub(r"X(?!\^)", "X^1", poly)
+		poly = sub(r"(?<!\*)X", "1*X", poly)
+		poly = sub(r"(?<!\^\d)(?<=\d)(?![\*.\d])", "*X^0", poly)
+		left, right = self.check_param(poly)
+		regex = r"[-+]?\d*\.?\d*\*X\^?[-+]?\d*\.?\d*"
+		self.tab = self.poly_to_dict(findall(regex, left), self.tab, True)
+		self.tab = self.poly_to_dict(findall(regex, right), self.tab, False)
 
 	def reduced_form(self):
 		reduced_form = str()

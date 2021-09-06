@@ -10,7 +10,6 @@ class Polynome:
 		else:
 			self.degree = 0
 		self.verbose, self.graph = verbose, graph
-		self.solution = self.process()
 
 	def degree_0(self):
 		if self.verbose:
@@ -41,7 +40,7 @@ class Polynome:
 
 	def process(self):
 		tab_degree = [self.degree_0, self.degree_1, self.degree_2]
-		return tab_degree[self.degree]()
+		self.solution = tab_degree[self.degree]()
 
 	def discriminant_positive(self, discriminant):
 		verboseX1, verboseX2 = str(), str()
