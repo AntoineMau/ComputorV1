@@ -1,4 +1,4 @@
-# ComputorV1
+# Computor v1
 ## Table of Contents
 * [Introduction](#introduction)
 * [Python Requirements](#python-Requirements)
